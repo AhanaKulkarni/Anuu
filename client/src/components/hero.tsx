@@ -76,10 +76,10 @@ export default function Hero() {
             <div className="slide-in-right">
               <div className="floating relative">
                 <img 
-                  src="/src/assets/profile-photo.png" 
-                  alt="Ahana Kulkarni - Creative Technologist" 
-                  className="w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-full shadow-2xl mx-auto border-8 border-white"
-                />
+  src="/src/assets/profile-photo.png" 
+  alt="Ahana Kulkarni - Creative Technologist" 
+  className="w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-full shadow-2xl mx-auto border-8 border-white"
+                  />
                 
                 {/* Floating decorative elements */}
                 <div className="absolute -top-4 -right-4 w-24 h-24 bg-navy rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg floating" style={{animationDelay: '1s'}}>
