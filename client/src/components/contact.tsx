@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin, Linkedin, Github, Instagram, Twitter } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Github, Instagram, Twitter, Send, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -39,151 +39,162 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-16 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-20 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-indigo-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+      </div>
+      
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-primary-custom mb-4">
-            Let's Work Together
-          </h2>
-          <p className="text-lg text-secondary-custom max-w-2xl mx-auto">
-            Ready to bring your next project to life? I'd love to hear about your ideas and explore how we can collaborate.
-          </p>
+          <div className="fade-in-up">
+            <div className="flex items-center justify-center mb-4">
+              <Star className="w-8 h-8 text-navy mr-3" />
+              <h2 className="text-4xl sm:text-5xl font-bold text-navy">
+                Let's Work Together
+              </h2>
+            </div>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Ready to bring your next project to life? I'd love to hear about your ideas and explore how we can collaborate.
+            </p>
+          </div>
         </div>
         
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-16">
           <div className="space-y-8">
-            <div>
-              <h3 className="text-xl font-semibold text-slate-800 mb-6">Get in Touch</h3>
-              <div className="space-y-4">
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                    <Mail className="w-5 h-5 text-primary-custom" />
+            <div className="slide-in-left">
+              <h3 className="text-2xl font-bold text-navy mb-8">Get in Touch</h3>
+              <div className="space-y-6">
+                <div className="flex items-center group">
+                  <div className="w-16 h-16 bg-navy rounded-2xl flex items-center justify-center mr-6 group-hover:bg-navy-light transition-colors duration-300">
+                    <Mail className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <p className="font-medium text-slate-800">Email</p>
-                    <a href={`mailto:${contactInfo.email}`} className="text-secondary-custom hover:text-primary-custom">
+                    <p className="font-semibold text-navy text-lg">Email</p>
+                    <a href={`mailto:${contactInfo.email}`} className="text-gray-600 hover:text-navy text-lg transition-colors duration-300">
                       {contactInfo.email}
                     </a>
                   </div>
                 </div>
                 
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                    <Phone className="w-5 h-5 text-primary-custom" />
+                <div className="flex items-center group">
+                  <div className="w-16 h-16 bg-navy rounded-2xl flex items-center justify-center mr-6 group-hover:bg-navy-light transition-colors duration-300">
+                    <Phone className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <p className="font-medium text-slate-800">Phone</p>
-                    <a href={`tel:${contactInfo.phone}`} className="text-secondary-custom hover:text-primary-custom">
+                    <p className="font-semibold text-navy text-lg">Phone</p>
+                    <a href={`tel:${contactInfo.phone}`} className="text-gray-600 hover:text-navy text-lg transition-colors duration-300">
                       {contactInfo.phone}
                     </a>
                   </div>
                 </div>
                 
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                    <MapPin className="w-5 h-5 text-primary-custom" />
+                <div className="flex items-center group">
+                  <div className="w-16 h-16 bg-navy rounded-2xl flex items-center justify-center mr-6 group-hover:bg-navy-light transition-colors duration-300">
+                    <MapPin className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <p className="font-medium text-slate-800">Location</p>
-                    <p className="text-secondary-custom">{contactInfo.location}</p>
+                    <p className="font-semibold text-navy text-lg">Location</p>
+                    <p className="text-gray-600 text-lg">{contactInfo.location}</p>
                   </div>
                 </div>
               </div>
             </div>
             
-            <div>
-              <h3 className="text-xl font-semibold text-slate-800 mb-6">Connect With Me</h3>
+            <div className="slide-in-left" style={{animationDelay: '0.2s'}}>
+              <h3 className="text-2xl font-bold text-navy mb-8">Connect With Me</h3>
               <div className="flex space-x-4">
                 <a 
                   href={contactInfo.social.linkedin} 
-                  className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center hover:bg-primary-custom hover:text-white transition-colors"
+                  className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center hover:bg-navy hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl pulse-hover border border-gray-200"
                 >
-                  <Linkedin className="w-5 h-5" />
+                  <Linkedin className="w-6 h-6" />
                 </a>
                 <a 
                   href={contactInfo.social.github} 
-                  className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center hover:bg-primary-custom hover:text-white transition-colors"
+                  className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center hover:bg-navy hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl pulse-hover border border-gray-200"
                 >
-                  <Github className="w-5 h-5" />
+                  <Github className="w-6 h-6" />
                 </a>
                 <a 
                   href={contactInfo.social.instagram} 
-                  className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center hover:bg-primary-custom hover:text-white transition-colors"
+                  className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center hover:bg-navy hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl pulse-hover border border-gray-200"
                 >
-                  <Instagram className="w-5 h-5" />
+                  <Instagram className="w-6 h-6" />
                 </a>
                 <a 
                   href={contactInfo.social.twitter} 
-                  className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center hover:bg-primary-custom hover:text-white transition-colors"
+                  className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center hover:bg-navy hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl pulse-hover border border-gray-200"
                 >
-                  <Twitter className="w-5 h-5" />
+                  <Twitter className="w-6 h-6" />
                 </a>
               </div>
             </div>
             
-            <div className="bg-gradient-to-r from-blue-500 to-amber-500 p-6 rounded-xl text-white">
-              <h4 className="font-semibold text-lg mb-2">Available for New Projects</h4>
-              <p className="text-blue-100 mb-4">
+            <div className="gradient-bg p-8 rounded-2xl text-white slide-in-left" style={{animationDelay: '0.4s'}}>
+              <h4 className="font-bold text-2xl mb-4">Available for New Projects</h4>
+              <p className="text-blue-100 mb-6 leading-relaxed text-lg">
                 I'm currently accepting new projects and collaborations. Whether you need design, development, 
                 or creative writing services, let's discuss how I can help bring your vision to life.
               </p>
-              <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-white/20 text-blue-100 text-sm rounded-full">UI/UX Projects</span>
-                <span className="px-3 py-1 bg-white/20 text-blue-100 text-sm rounded-full">Frontend Development</span>
-                <span className="px-3 py-1 bg-white/20 text-blue-100 text-sm rounded-full">Script Writing</span>
+              <div className="flex flex-wrap gap-3">
+                <span className="px-4 py-2 bg-white/20 text-blue-100 text-sm rounded-full font-medium">UI/UX Projects</span>
+                <span className="px-4 py-2 bg-white/20 text-blue-100 text-sm rounded-full font-medium">Frontend Development</span>
+                <span className="px-4 py-2 bg-white/20 text-blue-100 text-sm rounded-full font-medium">Script Writing</span>
               </div>
             </div>
           </div>
           
-          <div className="bg-gray-50 p-8 rounded-xl">
+          <div className="bg-white p-10 rounded-3xl shadow-2xl border border-gray-100 slide-in-right">
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid sm:grid-cols-2 gap-4">
+              <div className="grid sm:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="first-name" className="block text-sm font-medium text-slate-800 mb-2">
+                  <label htmlFor="first-name" className="block text-sm font-semibold text-navy mb-3">
                     First Name
                   </label>
                   <Input
                     id="first-name"
                     value={formData.firstName}
                     onChange={(e) => handleInputChange('firstName', e.target.value)}
-                    className="w-full"
+                    className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 focus:border-navy transition-colors duration-300"
                     required
                   />
                 </div>
                 <div>
-                  <label htmlFor="last-name" className="block text-sm font-medium text-slate-800 mb-2">
+                  <label htmlFor="last-name" className="block text-sm font-semibold text-navy mb-3">
                     Last Name
                   </label>
                   <Input
                     id="last-name"
                     value={formData.lastName}
                     onChange={(e) => handleInputChange('lastName', e.target.value)}
-                    className="w-full"
+                    className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 focus:border-navy transition-colors duration-300"
                     required
                   />
                 </div>
               </div>
               
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-slate-800 mb-2">
-                  Email
+                <label htmlFor="email" className="block text-sm font-semibold text-navy mb-3">
+                  Email Address
                 </label>
                 <Input
                   id="email"
                   type="email"
                   value={formData.email}
                   onChange={(e) => handleInputChange('email', e.target.value)}
-                  className="w-full"
+                  className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 focus:border-navy transition-colors duration-300"
                   required
                 />
               </div>
               
               <div>
-                <label htmlFor="project-type" className="block text-sm font-medium text-slate-800 mb-2">
+                <label htmlFor="project-type" className="block text-sm font-semibold text-navy mb-3">
                   Project Type
                 </label>
                 <Select value={formData.projectType} onValueChange={(value) => handleInputChange('projectType', value)}>
-                  <SelectTrigger className="w-full">
+                  <SelectTrigger className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 focus:border-navy">
                     <SelectValue placeholder="Select a project type" />
                   </SelectTrigger>
                   <SelectContent>
@@ -197,11 +208,11 @@ export default function Contact() {
               </div>
               
               <div>
-                <label htmlFor="budget" className="block text-sm font-medium text-slate-800 mb-2">
+                <label htmlFor="budget" className="block text-sm font-semibold text-navy mb-3">
                   Budget Range
                 </label>
                 <Select value={formData.budget} onValueChange={(value) => handleInputChange('budget', value)}>
-                  <SelectTrigger className="w-full">
+                  <SelectTrigger className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 focus:border-navy">
                     <SelectValue placeholder="Select budget range" />
                   </SelectTrigger>
                   <SelectContent>
@@ -214,22 +225,26 @@ export default function Contact() {
               </div>
               
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-slate-800 mb-2">
+                <label htmlFor="message" className="block text-sm font-semibold text-navy mb-3">
                   Project Details
                 </label>
                 <Textarea
                   id="message"
                   value={formData.message}
                   onChange={(e) => handleInputChange('message', e.target.value)}
-                  rows={4}
+                  rows={5}
                   placeholder="Tell me about your project, goals, and timeline..."
-                  className="w-full"
+                  className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 focus:border-navy transition-colors duration-300 resize-none"
                   required
                 />
               </div>
               
-              <Button type="submit" className="w-full bg-primary-custom text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+              <Button 
+                type="submit" 
+                className="w-full bg-navy text-white py-4 px-6 rounded-xl hover:bg-navy-light transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl pulse-hover flex items-center justify-center group"
+              >
                 Send Message
+                <Send className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
               </Button>
             </form>
           </div>
