@@ -76,7 +76,7 @@ export default function Hero() {
             <div className="slide-in-right">
               <div className="floating relative">
                 <img 
-                  src="https://images.unsplash.com/photo-1494790108755-2616b612b5bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=800" 
+                  src="/src/assets/profile-photo.png" 
                   alt="Ahana Kulkarni - Creative Technologist" 
                   className="w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-full shadow-2xl mx-auto border-8 border-white"
                 />
